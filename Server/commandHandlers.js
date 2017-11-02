@@ -57,7 +57,7 @@ var signup = function (data) {
 }
 
 var loadscenario = function (data) {
-	return new Promise(function(resolve, reject) {
+	return new Promise(function(resolve, reject){
 		console.log("finding scenario")
 		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
 			console.log("rejected")
@@ -79,6 +79,7 @@ var loadscenario = function (data) {
 				reject(null)
 			}
 		})
+		console.log("finding scenario")
 	})
 }
 
