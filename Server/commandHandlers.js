@@ -58,14 +58,6 @@ var signup = function (data) {
 
 var loadscenario = function (data) {
 	return new Promise(function(resolve, reject) {
-		
-		var scenario = new Scenario()
-		
-		scenario.title = data.title
-		scenario.save(function(error){
-			console.log("Saving: ", scenario)
-		})
-		/*
 		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
 			if(error){
 				console.log(error)
@@ -83,7 +75,7 @@ var loadscenario = function (data) {
 			else{
 				reject(null)
 			}
-		})*/
+		})
 	})
 }
 

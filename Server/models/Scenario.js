@@ -1,8 +1,8 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var scenarioSchema = new Schema({
-  username: {
-    title: String,
+  title: {
+    type: String,
     required: true
   },
   questions: [{type: Schema.Types.Mixed}],
