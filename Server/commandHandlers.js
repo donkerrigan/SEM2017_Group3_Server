@@ -58,6 +58,7 @@ var signup = function (data) {
 
 var loadscenario = function (data) {
 	return new Promise(function(resolve, reject) {
+		console.log("finding scenario")
 		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
 			if(error){
 				console.log(error)
