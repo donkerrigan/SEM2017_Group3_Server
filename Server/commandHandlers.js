@@ -65,7 +65,7 @@ var loadscenario = function (data) {
 		scenario.save(function(error){
 			console.log("Saving: ", scenario)
 		})
-		
+		/*
 		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
 			if(error){
 				console.log(error)
@@ -83,7 +83,7 @@ var loadscenario = function (data) {
 			else{
 				reject(null)
 			}
-		})
+		})*/
 	})
 }
 
