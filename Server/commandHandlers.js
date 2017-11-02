@@ -74,6 +74,7 @@ var loadscenario = function (data) {
 				resolve(scenarioFound)
 			}
 			else{
+				console.log("rejected")
 				reject(null)
 			}
 		})
