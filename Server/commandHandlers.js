@@ -1,4 +1,5 @@
 var User = require('./models/User.js')
+var Scenario = require('./models/Scenario.js')
 var Promise = require('bluebird')
 
 var message = function (data) {
@@ -79,7 +80,6 @@ var loadscenario = function (data) {
 				reject(null)
 			}
 		})
-		console.log("finding scenario")
 	})
 }
 
