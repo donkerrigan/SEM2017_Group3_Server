@@ -4,5 +4,6 @@ module.exports = function () {
   commands.push('login')
   commands.push('signup')
   commands.push('loadscenario')
+  commands.push('savescenario')
   return commands
 }

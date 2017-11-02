@@ -41,4 +41,16 @@ var loadscenario = function (data) {
 	})
 }
 
-module.exports = {login, signup, message, loadscenario}
+var savescenario = function (data) {
+	var that = this
+	var theData = JSON.parse(data)
+	commandHandlers.loadscenario(theData).then(function (saveResult){
+		console.log(saveResult, 'Scenario Saved Successfully')
+		that.emit('savescenario', saveResult)
+	}).catch(function (){
+		console.log('Scnenario Save ERROR')
+		that.emit('savescenario', null)
+	})
+}
+
+module.exports = {login, signup, message, loadscenario, savescenario}

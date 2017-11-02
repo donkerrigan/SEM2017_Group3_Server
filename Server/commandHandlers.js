@@ -59,9 +59,7 @@ var signup = function (data) {
 
 var loadscenario = function (data) {
 	return new Promise(function(resolve, reject){
-		console.log("finding scenario")
 		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
-			console.log("rejected")
 			if(error){
 				console.log(error)
 				reject(null)
@@ -76,11 +74,38 @@ var loadscenario = function (data) {
 				resolve(scenarioFound)
 			}
 			else{
-				console.log("rejected")
 				reject(null)
 			}
 		})
 	})
 }
 
-module.exports = {login, signup, message, loadscenario}
+var savescenario = function (data) {
+	return new Promise(function(resolve, reject){
+		var scenario = new Scenario()
+		scenario.title = data.title
+		
+		Scenario.findOne({title: scenario.title}, function(error, scenarioFound){
+			if(error){
+				console.log(error)
+				reject(null)
+			}
+		}).then(function(scenarioFound) {
+			if(scenarioFound){
+				reject(null)
+			}
+			else{
+				scenario.title = data.title
+				scenario.questions = data.questions
+				scenario.questionCount = data.questionCount
+				scenario.startIndex = data.startIndex
+				scenario.save(function(error){
+					console.log('Saving Scenario', scenario.title)
+					resolve(scenario)
+				})
+			}
+		})
+	}
+}
+
+module.exports = {login, signup, message, loadscenario, savescenario}
