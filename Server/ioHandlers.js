@@ -31,6 +31,7 @@ var theData = JSON.parse(data)
 var loadscenario = function (data) {
 	var that = this
 	var theData = JSON.parse(data)
+	console.log(theData)
 	commandHandlers.loadscenario(theData).then(function (loadedScenario){
 		console.log(loadedScenario, 'Scenario successfully loaded')
 		that.emit('loadscenario', loadedScenario)
