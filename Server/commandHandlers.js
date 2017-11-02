@@ -56,4 +56,27 @@ var signup = function (data) {
   })
 }
 
-module.exports = {login, signup, message}
+var loadscenario = function (data) {
+	return new Promise(function(resolve, reject) {
+		Scenario.findOne({title: data.title}, function(error, scenarioFound) {
+			if(error){
+				console.log(error)
+				reject(null)
+			}
+		}).then(function (scenarioFound) {
+			if(!scenarioFount){
+				console.log('No Scenario found')
+				reject(null)
+			}
+			else if(scenarioFound){
+				console.log('Scenario found')
+				resolve(scenarioFound)
+			}
+			else{
+				reject(null)
+			}
+		})
+	})
+}
+
+module.exports = {login, signup, message, loadscenario}

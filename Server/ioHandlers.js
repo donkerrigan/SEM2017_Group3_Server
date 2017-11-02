@@ -28,4 +28,16 @@ var theData = JSON.parse(data)
   })
 }
 
-module.exports = {login, signup, message}
+var loadscenario = function (data) {
+	var that = this
+	var theData = JSON.parse(data)
+	commandHandlers.loadscenario(theData).then(function (loadedScenario){
+		console.log(loadedScenario, 'Scenario successfully loaded')
+		that.emit('loadscenario', loadedScenario)
+	}).catch(function (){
+		console.log('Unsuccessful load')
+		that.emit('loadscenario', null)
+	})
+}
+
+module.exports = {login, signup, message, loadscenario}

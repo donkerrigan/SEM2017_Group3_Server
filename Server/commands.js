@@ -3,5 +3,6 @@ module.exports = function () {
   commands.push('message')
   commands.push('login')
   commands.push('signup')
+  commands.push('loadscenario')
   return commands
 }
