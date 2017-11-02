@@ -67,7 +67,7 @@ var loadscenario = function (data) {
 				reject(null)
 			}
 		}).then(function (scenarioFound) {
-			if(!scenarioFount){
+			if(!scenarioFound){
 				console.log('No Scenario found')
 				reject(null)
 			}
