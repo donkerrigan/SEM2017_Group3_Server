@@ -105,7 +105,7 @@ var savescenario = function (data) {
 				})
 			}
 		})
-	}
+	})
 }
 
 module.exports = {login, signup, message, loadscenario, savescenario}
