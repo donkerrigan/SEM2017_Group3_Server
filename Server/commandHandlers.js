@@ -85,7 +85,7 @@ var savescenario = function (data) {
 		var scenario = new Scenario()
 		scenario.title = data.title
 		Scenario.findOne({title: data.title}, function(error, scenarioFound){
-			
+		console.log("Saving Scenario....")
 			if(error){
 				console.log(error)
 				reject(null)

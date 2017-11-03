@@ -44,8 +44,7 @@ var loadscenario = function (data) {
 var savescenario = function (data) {
 	var that = this
 	var theData = JSON.parse(data)
-		console.log("Saving Scenario....")
-	commandHandlers.loadscenario(theData).then(function (saveResult){
+	commandHandlers.savescenario(theData).then(function (saveResult){
 		console.log(saveResult, 'Scenario Saved Successfully')
 		that.emit('savescenario', saveResult)
 	}).catch(function (){
