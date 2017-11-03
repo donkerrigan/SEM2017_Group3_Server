@@ -48,7 +48,7 @@ var savescenario = function (data) {
 		console.log(saveResult, 'Scenario Saved Successfully')
 		that.emit('savescenario', saveResult)
 	}).catch(function (){
-		console.log('Scnenario Save ERROR')
+		console.log('Scenario Save ERROR')
 		that.emit('savescenario', null)
 	})
 }
