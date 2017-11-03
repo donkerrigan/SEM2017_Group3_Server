@@ -84,7 +84,7 @@ var savescenario = function (data) {
 	return new Promise(function(resolve, reject){
 		var scenario = new Scenario()
 		scenario.title = data.title
-		Scenario.findOne({title: data.title}, function(error, scenarioFound){
+		Scenario.findOne({title: scenario.title}, function(error, scenarioFound){
 		console.log("Saving Scenario....")
 			if(error){
 				console.log(error)
