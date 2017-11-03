@@ -81,7 +81,6 @@ var loadscenario = function (data) {
 }
 
 var savescenario = function (data) {
-		console.log("Saving Scenario....")
 	return new Promise(function(resolve, reject){
 		var scenario = new Scenario()
 		scenario.title = data.title
