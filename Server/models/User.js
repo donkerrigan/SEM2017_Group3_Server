@@ -8,7 +8,12 @@ var userSchema = new Schema({
 	password: {
 		type: String,
 		required: true
-	}
+	},
+	admin: {
+		type: Boolean,
+		required: true
+	},
+	achievements: [{type: Schema.Types.Mixed}]
 })
 
 
