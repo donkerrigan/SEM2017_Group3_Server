@@ -5,5 +5,6 @@ module.exports = function () {
 	commands.push('signup');
 	commands.push('loadscenario');
 	commands.push('savescenario');
+	commands.push('updatescenario');
 	return commands;
 }

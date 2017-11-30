@@ -110,4 +110,18 @@ var savescenario = function (data) {
 	})
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario}
+var updatescenario = function (data) {
+	return new Promise(function(resolve, reject) {
+		Scenario.updateOne({title: data.title}, {questions: data.questions, questionCount: data.questionCount, startIndex: data.startIndex}, function(error, scenarioFound) {
+			console.log("Updating Scenario...");
+			if(error){
+				console.log(error);
+				reject(null);
+			}
+		}).then(function(scenarioFound) {
+			resolve(scenarioFound);
+		});
+	});
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario}
