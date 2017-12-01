@@ -58,7 +58,7 @@ var updatescenario = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);
 	commandHandlers.updatescenario(theData).then(function (updateResult) {
-		console.log(updateResult, "Scenario Updated");
+		console.log(updateResult.nModified, "Scenario Updated");
 		that.emit('updatescenario', updateResult);
 	}).catch(function() {
 		console.log("Error updating scenario");
