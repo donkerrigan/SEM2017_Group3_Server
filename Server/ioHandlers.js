@@ -60,8 +60,8 @@ var updatescenario = function(data) {
 	commandHandlers.updatescenario(theData).then(function (updateResult) {
 		console.log(updateResult, "Scenario Updated");
 		that.emit('updatescenario', updateResult);
-	}).catch(function(updateResult) {
-		console.log("Error updating scenario", updateResult);
+	}).catch(function() {
+		console.log("Error updating scenario");
 		that.emit('updatescenario', null);
 	});
 };

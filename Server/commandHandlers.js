@@ -115,7 +115,7 @@ var updatescenario = function (data) {
 		Scenario.updateOne({title: data.title}, {questions: data.questions, questionCount: data.questionCount, startIndex: data.startIndex}, function(error, scenarioFound) {
 			console.log('Updating Scenario...');
 			if(error){
-				console.log(error);
+				console.log('There is an error');
 				reject(null);
 			}
 		}).then(function(scenarioFound) {
