@@ -119,14 +119,8 @@ var updatescenario = function (data) {
 				reject(null);
 			}
 		}).then(function(scenarioFound) {
-			if(scenarioFound.n >= 0){
 				console.log('Updated Scenario');
 				resolve(data);
-			}
-			else{
-				console.log('Update achknowledged but redundant');
-				resolve(data);
-			}
 		});
 	});
 };
