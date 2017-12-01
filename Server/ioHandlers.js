@@ -61,7 +61,7 @@ var updatescenario = function(data) {
 		console.log(updateResult, "Scenario Updated");
 		that.emit('updatescenario', updateResult);
 	}).catch(function() {
-		console.log("Error updating scenario");
+		console.log("Error updating scenario", updateResult);
 		that.emit('updatescenario', null);
 	});
 };
