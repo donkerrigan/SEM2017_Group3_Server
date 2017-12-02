@@ -121,9 +121,6 @@ var updatescenario = function (data) {
 			}
 			resolve(data);
 			console.log(data, 'end of update function');
-		}).then(function(scenarioFound) {
-				console.log('Updated Scenario');
-				resolve(data);
 		});
 	});
 };
