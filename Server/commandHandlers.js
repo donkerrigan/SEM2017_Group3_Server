@@ -118,7 +118,7 @@ var updatescenario = function (data) {
 				console.log('There is an error');
 				reject(null);
 			}
-		}).then(function() {
+		}).then(function(scenarioFound) {
 				console.log('Updated Scenario');
 				resolve(data);
 		});
