@@ -114,15 +114,11 @@ var updatescenario = function (data) {
 	return new Promise(function(resolve, reject) {
 		Scenario.updateOne({title: data.title}, {questions: data.questions, questionCount: data.questionCount, startIndex: data.startIndex}, function(error, scenarioFound) {
 			console.log('Updating Scenario...');
-			console.log(scenarioFound);
 			if(error){
 				console.log('There is an error');
 				reject(null);
 			}
-			console.log(data, 'end of update function');
-		}).then(function (scenarioFound) {
-				console.log('Updated Scenario');
-				resolve(data);
+			resolve(data);
 		});
 	});
 };
