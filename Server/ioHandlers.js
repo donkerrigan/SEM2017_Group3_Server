@@ -71,8 +71,8 @@ var loadallscenarios = function (data) {
 	commandHandlers.loadallscenarios().then(function(loadResult) {
 		console.log(loadResult, 'Loaded Scenarios');
 		that.emit('loadallscenarios', loadResult);
-	}).catch(function () {
-		console.log('Error loading scenarios');
+	}).catch(function (loadResult) {
+		console.log('Error loading scenarios', loadResult);
 		that.emit('loadallscenarios', null);
 	});
 };
