@@ -66,4 +66,15 @@ var updatescenario = function(data) {
 	});
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario}
+var loadallscenarios = function (data) {
+	var that = this;
+	commandHandlers.loadallscenarios().then(function(loadResult) {
+		console.log(loadResult, 'Loaded Scenarios');
+		that.emit('loadallscenarios', loadResult);
+	}).catch(function () {
+		console.log('Error loading scenarios');
+		that.emit('loadallscenarios', null);
+	});
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios }

@@ -125,4 +125,19 @@ var updatescenario = function (data) {
 	});
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario}
+var loadallscenarios = function() {
+	return new Promise(function (resolve, reject) {
+		Scenario.find({}).toArray(function(error, scenariosFound) {
+			console.log('Loading all scenarios');
+			if(error){
+				console.log('Error loading all scenarios');
+				reject(null);
+			}
+		}).then(function (scenariosFound) {
+			console.log('Load all scenarios successful');
+			resolve(scenariosFound);
+		});
+	})
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios }
