@@ -127,7 +127,7 @@ var updatescenario = function (data) {
 
 var loadallscenarios = function() {
 	return new Promise(function (resolve, reject) {
-		Scenario.find({}).toArray(function(error, scenariosFound) {
+		Scenario.find({}, function(error, scenariosFound) {
 			console.log('Loading all scenarios');
 			if(error){
 				console.log('Error loading all scenarios');
