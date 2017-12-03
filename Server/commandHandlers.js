@@ -39,6 +39,7 @@ var signup = function (data) {
 		user.password = data.password;
 		user.username = data.username;
 		user.admin = data.admin;
+		user.achievements = data.achievements;
 	
 		User.findOne({username: user.username}, function (error, userfound){
 			if (error) {
