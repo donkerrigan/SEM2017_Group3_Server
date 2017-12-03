@@ -6,7 +6,7 @@ var scenarioSchema = new Schema({
 		required: true
 	},
 	questions: [{type: Schema.Types.Mixed}],
-	userScores: [{type: Schema.ObjectID, ref: 'Score'}],
+	userScores: [{type: Schema.ObjectId, ref: 'Score'}],
 	questionCount: {
 		type: Number,
 		required: true
