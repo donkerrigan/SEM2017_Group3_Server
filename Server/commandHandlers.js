@@ -139,4 +139,17 @@ var loadallscenarios = function() {
 	})
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios }
+var updateuser = function(data) {
+	return new Promise(function (resolve, reject) {
+		User.updateOne({username: data.username}, {achievements: data.achievements}, function(error, updateResult) {
+			console.log('Updating User data...');
+			if(error){
+				console.log(error);
+				reject(null);
+			}
+			resolve(data);
+		});
+	})
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser }

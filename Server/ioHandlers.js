@@ -58,7 +58,7 @@ var updatescenario = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);
 	commandHandlers.updatescenario(theData).then(function (updateResult) {
-		console.log(updateResult, 'Scenario Updated');
+		console.log('Scenario Updated');
 		that.emit('updatescenario', updateResult);
 	}).catch(function() {
 		console.log('Error updating scenario');
@@ -77,4 +77,14 @@ var loadallscenarios = function (data) {
 	});
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios }
+var updateuser = function (data) {
+	var that = this;
+	var theData = JSON.parse(data);
+	commandHandlers.updateuser(theData).then(function(updateResult) {
+		console.log('User Object Updated');
+	}).catch(function (updateResult) {
+		console.log('Error Updating User Object');
+	});
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser }

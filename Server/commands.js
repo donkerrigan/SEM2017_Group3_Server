@@ -7,5 +7,6 @@ module.exports = function () {
 	commands.push('savescenario');
 	commands.push('updatescenario');
 	commands.push('loadallscenarios');
+	commands.push('updateuser');
 	return commands;
 }
