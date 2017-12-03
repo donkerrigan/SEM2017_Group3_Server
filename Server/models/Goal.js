@@ -5,6 +5,10 @@ var goalSchema = new Schema({
 		type: String,
 		required: true
 	},
+	goalID: {
+		type: String,
+		required: true
+	},
 	progressToMeet: {
 		type: Number,
 		required: true
