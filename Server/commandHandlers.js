@@ -144,7 +144,7 @@ var deletescenario = function(data) {
 				resolve(scenariosFound);
 			});
 		});
-	}
+	});
 };
 
 var loadallscenarios = function() {
