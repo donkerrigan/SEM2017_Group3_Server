@@ -66,6 +66,18 @@ var updatescenario = function(data) {
 	});
 };
 
+var deletescenario = function(data) {
+	var that = this;
+	var theData = JSON.parse(data);
+	commandHandlers.deletescenario(theData).then(function (deleteResult) {
+		console.log('Scenario Removed');
+		that.emit('loadallscenarios', deleteResult);
+	}).catch(function(){
+		console.log('Error removing scenario')
+		that.emit('loadallscenarios', null);
+	});
+};
+
 var loadallscenarios = function (data) {
 	var that = this;
 	commandHandlers.loadallscenarios().then(function(loadResult) {
@@ -87,4 +99,4 @@ var updateuser = function (data) {
 	});
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser }
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario }

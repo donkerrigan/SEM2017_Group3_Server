@@ -124,6 +124,29 @@ var updatescenario = function (data) {
 	});
 };
 
+var deletescenario = function(data) {
+	return new Promise(function(resolve, reject) {
+		Scenario.remove({title: data.title} ,function(error, deleteResult) {
+			console.log('Removing scenario...');
+			if(error){
+				console.log('There was an error removing scenario');
+				reject(null);
+			}
+		}).then(function () {
+			Scenario.find({}, function(error, scenariosFound) {
+				console.log('Loading all scenarios');
+				if(error){
+					console.log('Error loading all scenarios');
+					reject(null);
+				}
+			}).then(function (scenariosFound) {
+				console.log('Load all scenarios successful');
+				resolve(scenariosFound);
+			});
+		});
+	}
+};
+
 var loadallscenarios = function() {
 	return new Promise(function (resolve, reject) {
 		Scenario.find({}, function(error, scenariosFound) {
@@ -152,4 +175,4 @@ var updateuser = function(data) {
 	})
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser }
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario }

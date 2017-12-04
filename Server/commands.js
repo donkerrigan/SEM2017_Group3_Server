@@ -8,5 +8,6 @@ module.exports = function () {
 	commands.push('updatescenario');
 	commands.push('loadallscenarios');
 	commands.push('updateuser');
+	commands.push('deletescenario');
 	return commands;
 }

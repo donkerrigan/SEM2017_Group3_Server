@@ -5,7 +5,11 @@ var questionSchema = new Schema({
 		type: String,
 		required: true
 	},
-	answers: [ {type: Schema.ObjectId, ref: 'Answer'} ]
+	answers: [ {type: Schema.ObjectId, ref: 'Answer'} ],
+	isQuestion: {
+		type: Boolean,
+		required: true
+	}
 })
 
 
