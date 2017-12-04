@@ -113,7 +113,7 @@ var savescenario = function (data) {
 
 var updatescenario = function (data) {
 	return new Promise(function(resolve, reject) {
-		Scenario.updateOne({title: data.title}, {questions: data.questions, questionCount: data.questionCount, startIndex: data.startIndex}, function(error, scenarioFound) {
+		Scenario.updateOne({title: data.title}, {questions: data.questions, userScores: data.userScores, questionCount: data.questionCount, startIndex: data.startIndex}, function(error, scenarioFound) {
 			console.log('Updating Scenario...');
 			if(error){
 				console.log('There is an error');
