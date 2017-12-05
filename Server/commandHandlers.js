@@ -205,7 +205,7 @@ var saveguide = function (data) {
 		guide.guideDescription = data.guideDescription;
 		guide.save(function(error){
 			console.log('Saving Guide', guide.guideDescription);
-		};
+		});
 		/*Guide.updateOne({}, {guideDescription: data.guideDescription}, function(error, guideFound) {
 			console.log('Updating Guide...');
 			if(error){
