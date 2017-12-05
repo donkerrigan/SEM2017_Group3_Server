@@ -104,8 +104,10 @@ var loadguide = function(data) {
 	var theData = JSON.parse(data);
 	commandHandlers.loadguide(theData).then(function (loadResult) {
 		console.log('Loaded Guide Successfully');
+		that.emit('loadguide', loadResult);
 	}).catch(function(loadResult) {
 		console.log('Error Loading Guide');
+		that.emit('loadguide', null);
 	});
 };
 
