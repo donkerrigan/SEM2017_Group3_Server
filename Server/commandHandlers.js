@@ -201,14 +201,19 @@ var loadguide = function (data) {
 
 var saveguide = function (data) {
 	return new Promise(function(resolve, reject) {
-		Guide.updateOne({}, {guideDescription: data.guideDescription}, function(error, guideFound) {
+		var guide = new Guide();
+		guide.guideDescription = data.guideDescription;
+		guide.save(function(error){
+			console.log('Saving Guide', guide.guideDescription);
+		};
+		/*Guide.updateOne({}, {guideDescription: data.guideDescription}, function(error, guideFound) {
 			console.log('Updating Guide...');
 			if(error){
 				console.log('There is an error');
 				reject(null);
 			}
 			resolve(data);
-		});
+		});*/
 	});
 };
 
