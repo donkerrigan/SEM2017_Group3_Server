@@ -175,4 +175,40 @@ var updateuser = function(data) {
 	})
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario }
+var loadguide = function (data) {
+	return new Promise(function(resolve, reject){
+		Guide.findOne({}, function(error, guideFound) {
+			if(error){
+				console.log(error);
+				reject(null);
+			}
+		}).then(function (guideFound) {
+			if(!guideFound){
+				console.log('No Guide found');
+				reject(null);
+			}
+			else if(guideFound){
+				console.log('Guide found');
+				resolve(guideFound);
+			}
+			else{
+				reject(null);
+			}
+		})
+	});
+};
+
+var saveguide = function (data) {
+	return new Promise(function(resolve, reject) {
+		Guide.updateOne({}, {guideDescription: data.guideDescription}, function(error, guideFound) {
+			console.log('Updating Guide...');
+			if(error){
+				console.log('There is an error');
+				reject(null);
+			}
+			resolve(data);
+		});
+	});
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario, loadguide, saveguide }

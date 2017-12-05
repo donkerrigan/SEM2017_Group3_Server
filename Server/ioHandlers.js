@@ -99,4 +99,24 @@ var updateuser = function (data) {
 	});
 };
 
-module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario }
+var loadguide = function(data) {
+	var that = this;
+	var theData = JSON.parse(data);
+	commandHandlers.loadguide(theData).then(function (loadResult) {
+		console.log('Loaded Guide Successfully');
+	}).catch(function(loadResult) {
+		console.log('Error Loading Guide');
+	});
+};
+
+var saveguide = function(data) {
+	var that = this;
+	var theData = JSON.parse(data);
+	commandHandlers.saveguide(theData).then(function (saveResult) {
+		console.log('Saved Guide Successfully');
+	}).catch(function(saveResult) {
+		console.log('Error Saving Guide');
+	});
+};
+
+module.exports = {login, signup, message, loadscenario, savescenario, updatescenario, loadallscenarios, updateuser, deletescenario, loadguide, saveguide }

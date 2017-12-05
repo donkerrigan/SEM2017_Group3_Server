@@ -9,5 +9,7 @@ module.exports = function () {
 	commands.push('loadallscenarios');
 	commands.push('updateuser');
 	commands.push('deletescenario');
+	commands.push('loadguide');
+	commands.push('saveguide');
 	return commands;
 }
