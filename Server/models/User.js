@@ -13,7 +13,8 @@ var userSchema = new Schema({
 		type: Boolean,
 		required: true
 	},
-	achievements: [{type: Schema.Types.Mixed}]
+	achievements: [{type: Schema.Types.Mixed}],
+	scenarioStats: [{type: Schema.ObjectId, ref: 'ScenarioStat'}]
 })
 
 

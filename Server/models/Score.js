@@ -9,6 +9,6 @@ var scoreSchema = new Schema({
 		type: String,
 		required: true
 	}
-
+})
 
 module.exports = mongoose.model('Score', scoreSchema)

@@ -165,7 +165,7 @@ var loadallscenarios = function() {
 
 var updateuser = function(data) {
 	return new Promise(function (resolve, reject) {
-		User.updateOne({username: data.username}, {achievements: data.achievements}, function(error, updateResult) {
+		User.updateOne({username: data.username}, {achievements: data.achievements, scenarioStats: data.scenarioStats}, function(error, updateResult) {
 			console.log('Updating User data...');
 			if(error){
 				console.log(error);
