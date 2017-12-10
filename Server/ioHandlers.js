@@ -94,8 +94,10 @@ var updateuser = function (data) {
 	var theData = JSON.parse(data);
 	commandHandlers.updateuser(theData).then(function(updateResult) {
 		console.log('User Object Updated');
+		that.emit('updateuser', updateResult);
 	}).catch(function (updateResult) {
 		console.log('Error Updating User Object');
+		that.emit('updateuser', null);
 	});
 };
 
