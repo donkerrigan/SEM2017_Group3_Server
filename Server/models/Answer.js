@@ -1,6 +1,10 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
+/*
+ * Object model for an Answer from the client application.
+ * THIS MUST MATCH THE CLIENT OBJECT TO BE STORED AND UPDATED PROPERLY.
+ */
 var answerSchema = new Schema ({
 	answerText: {
 		type: String,
@@ -10,8 +14,8 @@ var answerSchema = new Schema ({
 		type: Number,
 		required: true
 	}
-})
+});
 
-let Answer = mongoose.model('Answer', answerSchema)
+let Answer = mongoose.model('Answer', answerSchema);
 
-module.exports = Answer
+module.exports = Answer;

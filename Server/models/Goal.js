@@ -1,5 +1,10 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+/*
+ * Object model for a Goal from the client application.
+ * THIS MUST MATCH THE CLIENT OBJECT TO BE STORED AND UPDATED PROPERLY.
+ */
 var goalSchema = new Schema({
 	goalDescription: {
 		type: String,
@@ -21,7 +26,7 @@ var goalSchema = new Schema({
 		type: Boolean,
 		required: true
 	}
-})
+});
 
 
-module.exports = mongoose.model('Goal', goalSchema)
+module.exports = mongoose.model('Goal', goalSchema);

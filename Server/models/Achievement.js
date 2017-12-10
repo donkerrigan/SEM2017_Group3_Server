@@ -1,5 +1,9 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+/*
+ * Object model for an Achievement from the client application.
+ * THIS MUST MATCH THE CLIENT OBJECT TO BE STORED AND UPDATED PROPERLY.
+ */
 var achievementSchema = new Schema({
 	name: {
 		type: String,
@@ -22,7 +26,7 @@ var achievementSchema = new Schema({
 		type: Boolean,
 		required: true
 	}
-})
+});
 
 
-module.exports = mongoose.model('Achievement', achievementSchema)
+module.exports = mongoose.model('Achievement', achievementSchema);

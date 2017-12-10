@@ -1,3 +1,6 @@
+/*
+ * This file simply contains all of the commands that the server will listen for and returns them in an array.
+ */
 module.exports = function () {
 	var commands = [];
 	commands.push('message');

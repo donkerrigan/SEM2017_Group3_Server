@@ -1,10 +1,20 @@
-var commandHandlers = require('./commandHandlers.js')
-var Promise = require('bluebird')
+var commandHandlers = require('./commandHandlers.js');
+var Promise = require('bluebird');
+/*
+ * This file controls all the handling of incomming requests to the server and what function to call in commandHandlers.
+ */
 
+
+/*
+ * This is an empty handler used for testing network connectivity to the client application.
+ */
 var message = function (data) {
 	
 };
 
+/*
+ * This is the method that is executed when a request to login is received from the client application.
+ */
 var login = function (data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -14,9 +24,12 @@ var login = function (data) {
 	}).catch(function (){
 		console.log('Login attempt failed.');
 		that.emit('login', null);
-	})
+	});
 };
 
+/*
+ * This is the method that is executed when a request to create an account is received from the client application.
+ */
 var signup = function (data) {
 	var theData = JSON.parse(data);
 	var that = this;
@@ -25,9 +38,12 @@ var signup = function (data) {
 		that.emit('signup', userObjectFound);
 	}).catch(function (userObjectFound){
 		that.emit('signup', userObjectFound);
-	})
+	});
 };
 
+/*
+ * This is the method that is executed when a request to load a scenario object by title is received from the client application.
+ */
 var loadscenario = function (data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -38,9 +54,12 @@ var loadscenario = function (data) {
 	}).catch(function (){
 		console.log('Unsuccessful load');
 		that.emit('loadscenario', null);
-	})
+	});
 };
 
+/*
+ * This is the method that is executed when a request to save a scenario object is received from the client application.
+ */
 var savescenario = function (data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -51,9 +70,12 @@ var savescenario = function (data) {
 	}).catch(function (){
 		console.log('Scenario Save ERROR');
 		that.emit('savescenario', null);
-	})
+	});
 };
 
+/*
+ * This is the method that is executed when a request to update an existing scenario on the database is received from the client application.
+ */
 var updatescenario = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -66,6 +88,9 @@ var updatescenario = function(data) {
 	});
 };
 
+/*
+ * This is the method that is executed when a request to delete an existing scenario on the database is received from the client application.
+ */
 var deletescenario = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -73,11 +98,14 @@ var deletescenario = function(data) {
 		console.log('Scenario Removed');
 		that.emit('loadallscenarios', deleteResult);
 	}).catch(function(){
-		console.log('Error removing scenario')
+		console.log('Error removing scenario');
 		that.emit('loadallscenarios', null);
 	});
 };
 
+/*
+ * This is the method that is executed when a request to load all existing scenarios on the database is received from the client application.
+ */
 var loadallscenarios = function (data) {
 	var that = this;
 	commandHandlers.loadallscenarios().then(function(loadResult) {
@@ -89,6 +117,9 @@ var loadallscenarios = function (data) {
 	});
 };
 
+/*
+ * This is the method that is executed when a request to update a user's information on the database is received from the client application.
+ */
 var updateuser = function (data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -101,6 +132,9 @@ var updateuser = function (data) {
 	});
 };
 
+/*
+ * This is the method that is executed when a request to load the guide object from the database is received from the client application.
+ */
 var loadguide = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);
@@ -113,6 +147,9 @@ var loadguide = function(data) {
 	});
 };
 
+/*
+ * This is the method that is executed when a request to save a new guide on the database is received from the client application.
+ */
 var saveguide = function(data) {
 	var that = this;
 	var theData = JSON.parse(data);

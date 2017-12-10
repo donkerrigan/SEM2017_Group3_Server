@@ -1,5 +1,10 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+/*
+ * Object model for a Scenario from the client application.
+ * THIS MUST MATCH THE CLIENT OBJECT TO BE STORED AND UPDATED PROPERLY.
+ */
 var scenarioSchema = new Schema({
 	title: {
 		type: String,
@@ -15,7 +20,7 @@ var scenarioSchema = new Schema({
 		type: Number,
 		required: true
 	}
-})
+});
 
 
-module.exports = mongoose.model('Scenario', scenarioSchema)
+module.exports = mongoose.model('Scenario', scenarioSchema);
