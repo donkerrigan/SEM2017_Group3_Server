@@ -14,7 +14,7 @@ var userSchema = new Schema({
 		required: true
 	},
 	achievements: [{type: Schema.Types.Mixed}],
-	scenarioStats: [{type: Schema.ObjectId, ref: 'ScenarioStat'}]
+	scenarioStats: [{type: Schema.Types.Mixed}]
 })
 
 
